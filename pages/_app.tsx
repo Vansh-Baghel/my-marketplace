@@ -4,14 +4,8 @@ import { MeshProvider } from "@meshsdk/react";
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ReactNode } from 'react';
 
-type AppPropsWithChildren = AppProps & {
-  Component: React.ComponentType<AppProps['pageProps']>;
-  children: ReactNode;
-};
-
-function App({ Component, pageProps }: AppPropsWithChildren) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <MeshProvider>
       <Head>
@@ -21,13 +15,8 @@ function App({ Component, pageProps }: AppPropsWithChildren) {
         <link rel="icon" href="https://meshjs.dev/favicon/favicon-32x32.png" />
       </Head>
       <Navbar />
-      {/* Ensure that Component is a valid JSX element */}
-      {React.isValidElement(Component) ? (
-        <Component {...pageProps} />
-      ) : null}
+      <Component {...pageProps} />
       <Footer />
     </MeshProvider>
   );
 }
-
-export default App;
