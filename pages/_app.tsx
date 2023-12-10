@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import React from "react";
-import type { AppProps } from "next/app";
+import { AppProps } from "next/app";
 import { MeshProvider } from "@meshsdk/react";
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
