@@ -1,10 +1,10 @@
 import "@/styles/globals.css";
+import React from "react";
 import type { AppProps } from "next/app";
 import { MeshProvider } from "@meshsdk/react";
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
